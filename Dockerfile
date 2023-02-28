@@ -14,3 +14,5 @@ RUN pip install -r requirements.txt
 
 # copy project
 COPY . .
+
+CMD ["bash", "-c", "while !</dev/tcp/db/5432; do sleep 1; done; pytest"]
